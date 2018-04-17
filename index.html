@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thinking About Data, Dimensionally</h1>
+        <p>I&#8217;ve been thinking a lot about machine learning lately. Designers aren&#8217;t in the sights of the job-stealing robots (yet), but after reading and re-reading Jon Gold&#8217;s <a href="https://jon.gold/2016/05/robot-design-school/">Taking the Robots to Design School</a>, I think there&#8217;s a huge opportunity for designers to work with smart machines.</p>
+        
+        <p>Learning about machine learning and data science has been a challenge. Occasionally, though, familiar concepts will show up in unexpected ways.</p>
+        
+        <p>When authors write about dimensions of data sets, I try to imagine the data in real space, subject to perspective and lighting. This visual thinking helps me look past the abstract formulas and algorithms that comprise most of data science.</p>
+        
+        <p>With that in mind, I&#8217;d like to take you through a quick visualization exercise. By the end, I hope you&#8217;ll be able to grasp one of the abstract concepts of data science — dimensionality — and understand how it&#8217;s used in practice.</p>
+        
+        <h2>What is a dimension?</h2>
+        
+        <p>In general, a dimension is just another word for a measurement. We usually talk about three measurements of real-world somethings: height, width, and depth. But &#8220;dimension&#8221; is a word that that has a very specific definition in the context machine learning and data science<sup><a href="#fn1-27348" id="fnr1-27348" title="see footnote" class="footnote">1</a></sup>. To data scientists, a dimension can be <em>any</em> measurement.</p>
+        
+        <p>Take my dog, Timothy, for example.</p>
+        
+        <figure>
+            <img class="smallImage" src="images/tim.jpg" alt="" />
+        </figure>
+        
+        <p>To non-data-scientists, Tim has the typical three dimensions: height, width, and depth. To a data scientist, however, Tim has many, many more. A list of Tim&#8217;s dimensions might look like this:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align:left;">dimension</th>
+                    <th style="text-align:left;">value</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td style="text-align:left;">name</td>
+                    <td style="text-align:left;">&#8216;Timothy&#8217;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">age (human years)</td>
+                    <td style="text-align:left;">3</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">age (dog years)</td>
+                    <td style="text-align:left;">21</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">weight (lbs)</td>
+                    <td style="text-align:left;">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">breed</td>
+                    <td style="text-align:left;">&#8216;Chihuahua/Dachshund&#8217;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">favorite thing</td>
+                    <td style="text-align:left;">&#8216;Sleeping&#8217;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">least favorite thing</td>
+                    <td style="text-align:left;">&#8216;Loud Noises&#8217;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">&#8230;</td>
+                    <td style="text-align:left;">&#8230;</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>The list goes on and on. Eventually, we might be able to list out every single thing that makes up Tim!</p>
+        
+        <p>In fact, describing Tim using a set of three of these dimensions, and describing a box with the dimensions width, height, and depth, is not too different. </p>
+        
+        <div class="footnotes">
+            <hr />
+            <ol>
+                
+                <li id="fn1-27348">
+                    <p>There are many of these. Vectors, points, features, graphs, force, metric, all of these words get brand new definitions in data science. <a href="#fnr1-27348" title="return to article" class="reversefootnote">&#8617;&#xFE0E;</a></p>
+                </li>
+                
+            </ol>
+        </div>
+        
+    </div>
+    <div class="container">
+        <h3 class="l--mar-btm-l">1-dimensional graphs</h3>
+        <div class="graph graph--line"></div>
+        <div class="legend"></div>
+    </div>
+    <div class="container">
+        <h3 class="l--mar-btm-l">2-dimensional graphs</h3>
+        <div class="graph graph--rug"></div>
+        <div class="legend"></div>
+    </div>
+    <div class="container">
+        <h3>3-dimensional graph: Energy vs. Loudness vs. Tempo</h3>
+        <div class="graph graph--bubble"></div>
+        <div class="legend"></div>
+    </div>
+    <div class="container">
+        <h3>4-dimensional graph: Energy vs. Loudness vs. Tempo vs. Genre</h3>
+        <div class="graph graph--colorBubble"></div>
+        <h4>Genres</h4>
+        <div class="legend--colorBubble"></div>
+    </div>
+    <div class="container">
+        <h3>t-SNE (10 dimensions)</h3>
+        <div class="graph--tsne"></div>
+        <h4>Genres</h4>
+        <div class="legend--tsne"></div>
+    </div>
+    <div class="container">
+        <div class="footnotes">
+            <hr />
+            <ol>
+                
+                <li id="fn1-7127">
+                    <p>There are many of these. <a href="#fnr1-7127" title="return to article" class="reversefootnote">&#8617;&#xFE0E;</a></p>
+                </li>
+                
+            </ol>
+        </div>
+    </div>
+    <audio onloadstart="this.volume=0" src="" volume="0">
+    </audio>
+</body>
+<script src="scripts/main.bundle.js" charset="utf-8"></script>
+</html>
