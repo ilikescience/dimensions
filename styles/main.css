@@ -55,9 +55,29 @@
 }
 
 /* Now, let's apply it on an element */
-body {
+body, 
+html {
   font-family: "system-ui" ,sans-serif;
   margin-top: 4em;
+  font-size: 20px;
+}
+
+p {
+  font-family: "IBM Plex Serif", Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.4rem;
+  max-width: 65ch;
+  margin: 1rem auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+table {
+  font-size: 18px;
 }
 
 .dark {
@@ -147,9 +167,48 @@ h1, h2 {
   margin-bottom: 4rem;
 }
 
-.smallImage {
+.image {
   display: block;
-  max-width: 500px;
   height: auto;
   margin: 2rem auto;
+}
+
+.image--small {
+  max-width: 500px;
+}
+
+figure {
+  margin: 0;
+}
+
+.image--full {
+  max-width: 100%;
+}
+
+table {
+  font-size: 0.8rem;
+  font-family: "system-ui";
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+  margin: 3em 0;
+}
+
+thead {
+  border-bottom: 2px solid #ddd;
+}
+
+th {
+  font-weight: normal;
+  color: #999;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+td,
+th {
+  padding: 0.25rem 0;
 }

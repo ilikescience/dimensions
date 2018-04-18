@@ -3,90 +3,273 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     <div class="container">
         <h1>Thinking About Data, Dimensionally</h1>
-        <p>I&#8217;ve been thinking a lot about machine learning lately. Designers aren&#8217;t in the sights of the job-stealing robots (yet), but after reading and re-reading Jon Gold&#8217;s <a href="https://jon.gold/2016/05/robot-design-school/">Taking the Robots to Design School</a>, I think there&#8217;s a huge opportunity for designers to work with smart machines.</p>
-        
-        <p>Learning about machine learning and data science has been a challenge. Occasionally, though, familiar concepts will show up in unexpected ways.</p>
-        
-        <p>When authors write about dimensions of data sets, I try to imagine the data in real space, subject to perspective and lighting. This visual thinking helps me look past the abstract formulas and algorithms that comprise most of data science.</p>
-        
-        <p>With that in mind, I&#8217;d like to take you through a quick visualization exercise. By the end, I hope you&#8217;ll be able to grasp one of the abstract concepts of data science — dimensionality — and understand how it&#8217;s used in practice.</p>
-        
-        <h2>What is a dimension?</h2>
-        
-        <p>In general, a dimension is just another word for a measurement. We usually talk about three measurements of real-world somethings: height, width, and depth. But &#8220;dimension&#8221; is a word that that has a very specific definition in the context machine learning and data science<sup><a href="#fn1-27348" id="fnr1-27348" title="see footnote" class="footnote">1</a></sup>. To data scientists, a dimension can be <em>any</em> measurement.</p>
-        
-        <p>Take my dog, Timothy, for example.</p>
-        
-        <figure>
-            <img class="smallImage" src="images/tim.jpg" alt="" />
-        </figure>
-        
-        <p>To non-data-scientists, Tim has the typical three dimensions: height, width, and depth. To a data scientist, however, Tim has many, many more. A list of Tim&#8217;s dimensions might look like this:</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th style="text-align:left;">dimension</th>
-                    <th style="text-align:left;">value</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <tr>
-                    <td style="text-align:left;">name</td>
-                    <td style="text-align:left;">&#8216;Timothy&#8217;</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">age (human years)</td>
-                    <td style="text-align:left;">3</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">age (dog years)</td>
-                    <td style="text-align:left;">21</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">weight (lbs)</td>
-                    <td style="text-align:left;">15</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">breed</td>
-                    <td style="text-align:left;">&#8216;Chihuahua/Dachshund&#8217;</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">favorite thing</td>
-                    <td style="text-align:left;">&#8216;Sleeping&#8217;</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">least favorite thing</td>
-                    <td style="text-align:left;">&#8216;Loud Noises&#8217;</td>
-                </tr>
-                <tr>
-                    <td style="text-align:left;">&#8230;</td>
-                    <td style="text-align:left;">&#8230;</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <p>The list goes on and on. Eventually, we might be able to list out every single thing that makes up Tim!</p>
-        
-        <p>In fact, describing Tim using a set of three of these dimensions, and describing a box with the dimensions width, height, and depth, is not too different. </p>
-        
-        <div class="footnotes">
-            <hr />
-            <ol>
-                
-                <li id="fn1-27348">
-                    <p>There are many of these. Vectors, points, features, graphs, force, metric, all of these words get brand new definitions in data science. <a href="#fnr1-27348" title="return to article" class="reversefootnote">&#8617;&#xFE0E;</a></p>
-                </li>
-                
-            </ol>
-        </div>
-        
+
+<p>I’ve been thinking a lot about machine learning lately. Designers aren’t in the sights of the job-stealing robots (yet), but after reading and re-reading Jon Gold’s <a href="https://jon.gold/2016/05/robot-design-school/">Taking the Robots to Design School</a>, I think there’s a huge opportunity for designers to work with smart machines.</p>
+
+<p>Learning about machine learning and data science has been a challenge. Occasionally, though, familiar concepts will show up in unexpected ways.</p>
+
+<p>When authors write about dimensions of data sets, I imagine the data in real space, subject to perspective and lighting. This visual thinking helps me look past the abstract formulas and algorithms that comprise most of data science.</p>
+
+<p>With that in mind, I’d like to take you through a quick visualization exercise. By the end, I hope you’ll be able to grasp one of the abstract concepts of data science — dimensionality — and understand how it’s used in practice.</p>
+
+<h2>What is a dimension?</h2>
+
+<p>In general, a dimension is just another word for a measurement. We usually talk about three measurements of real-world somethings: height, width, and depth. But “dimension” is a word that that has a very specific definition in the context machine learning and data science. To data scientists, a dimension can be <em>any</em> measurement.</p>
+
+<p>Take my dog, Timothy, for example.</p>
+
+<figure>
+    <img src="images/tim.jpg" alt="">
+</figure>
+
+<p>To non-data-scientists, Tim has the typical three dimensions: height, width, and depth. To a data scientist, however, Tim has many, many more. A list of Tim’s dimensions might look like this:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">dimension</th>
+	<th style="text-align:left;">value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">name</td>
+	<td style="text-align:left;">‘Timothy’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">age (human years)</td>
+	<td style="text-align:left;">3</td>
+</tr>
+<tr>
+	<td style="text-align:left;">age (dog years)</td>
+	<td style="text-align:left;">21</td>
+</tr>
+<tr>
+	<td style="text-align:left;">breed</td>
+	<td style="text-align:left;">‘Chihuahua/Dachshund’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">favorite thing</td>
+	<td style="text-align:left;">‘Sleeping’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">least favorite thing</td>
+	<td style="text-align:left;">‘Loud Noises’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">&#8230;</td>
+	<td style="text-align:left;">&#8230;</td>
+</tr>
+</tbody>
+</table>
+
+<p>The list goes on and on. Eventually, we might be able to list out every single thing that makes up Tim!</p>
+
+<p>In fact, describing Tim using a set of three of these dimensions, and describing a box with the dimensions width, height, and depth, is not too different.</p>
+
+<figure>
+    <img src="images/tim_dimensions.jpg" alt="">
+</figure>
+
+<h2>Comparing across dimensions</h2>
+
+<p>The reason data scientists describe things using many dimensions is that it allows them to make comparisons. </p>
+
+<p>For instance, let’s compare me and Tim.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">dimension</th>
+	<th style="text-align:left;">Tim</th>
+	<th style="text-align:left;">Matt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">name</td>
+	<td style="text-align:left;">‘Timothy’</td>
+	<td style="text-align:left;">‘Matthew’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">age (human years)</td>
+	<td style="text-align:left;">3</td>
+	<td style="text-align:left;">31</td>
+</tr>
+<tr>
+	<td style="text-align:left;">age (dog years)</td>
+	<td style="text-align:left;">21</td>
+	<td style="text-align:left;">217</td>
+</tr>
+<tr>
+	<td style="text-align:left;">breed</td>
+	<td style="text-align:left;">‘Chihuahua/Dachshund’</td>
+	<td style="text-align:left;">‘Human’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">favorite thing</td>
+	<td style="text-align:left;">‘Sleeping’</td>
+	<td style="text-align:left;">‘Sleeping’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">least favorite thing</td>
+	<td style="text-align:left;">‘Loud Noises’</td>
+	<td style="text-align:left;">’Clamato’</td>
+</tr>
+<tr>
+	<td style="text-align:left;">&#8230;</td>
+	<td style="text-align:left;">&#8230;</td>
+	<td style="text-align:left;">&#8230;</td>
+</tr>
+</tbody>
+</table>
+
+<p>There’s not too much to learn, as we’re only comparing me and Tim; fascinating things start happening when you compare lots of things, across many dimensions.</p>
+
+<p>To do that, I’ll use data from Spotify. I created a playlist of 100 songs I’ve been listening to, and grabbed the data via an API. Here’s a small sample of the data:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">artist</th>
+	<th style="text-align:left;">track_name</th>
+	<th style="text-align:right;">danceability</th>
+	<th style="text-align:right;">energy</th>
+	<th style="text-align:right;">key</th>
+	<th style="text-align:right;">loudness</th>
+	<th style="text-align:right;">mode</th>
+	<th style="text-align:right;">speechiness</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Taylor Mcferrin</td>
+	<td style="text-align:left;">Blind Aesthetics</td>
+	<td style="text-align:right;">0.302</td>
+	<td style="text-align:right;">0.497</td>
+	<td style="text-align:right;">9</td>
+	<td style="text-align:right;">&#8211;15.209</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.0548</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Nohidea</td>
+	<td style="text-align:left;">Jasmine</td>
+	<td style="text-align:right;">0.713</td>
+	<td style="text-align:right;">0.212</td>
+	<td style="text-align:right;">8</td>
+	<td style="text-align:right;">&#8211;14.442</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.0431</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Ta-ku</td>
+	<td style="text-align:left;">Fairy Tale - Nujabes Tribute</td>
+	<td style="text-align:right;">0.769</td>
+	<td style="text-align:right;">0.669</td>
+	<td style="text-align:right;">0</td>
+	<td style="text-align:right;">&#8211;11.313</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.0429</td>
+</tr>
+<tr>
+	<td style="text-align:left;">FloFilz</td>
+	<td style="text-align:left;">Taxi Bossa</td>
+	<td style="text-align:right;">0.71</td>
+	<td style="text-align:right;">0.486</td>
+	<td style="text-align:right;">6</td>
+	<td style="text-align:right;">&#8211;10.085</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.17</td>
+</tr>
+<tr>
+	<td style="text-align:left;">The Deli</td>
+	<td style="text-align:left;">Briefing</td>
+	<td style="text-align:right;">0.816</td>
+	<td style="text-align:right;">0.413</td>
+	<td style="text-align:right;">4</td>
+	<td style="text-align:right;">&#8211;9.878</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.122</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Elaquent</td>
+	<td style="text-align:left;">Cinnamon Sticks</td>
+	<td style="text-align:right;">0.544</td>
+	<td style="text-align:right;">0.536</td>
+	<td style="text-align:right;">11</td>
+	<td style="text-align:right;">&#8211;8.854</td>
+	<td style="text-align:right;">0</td>
+	<td style="text-align:right;">0.35</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Mono:Massive</td>
+	<td style="text-align:left;">Do Some Real</td>
+	<td style="text-align:right;">0.722</td>
+	<td style="text-align:right;">0.585</td>
+	<td style="text-align:right;">5</td>
+	<td style="text-align:right;">&#8211;9.824</td>
+	<td style="text-align:right;">0</td>
+	<td style="text-align:right;">0.039</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Philanthrope</td>
+	<td style="text-align:left;">Intro</td>
+	<td style="text-align:right;">0.629</td>
+	<td style="text-align:right;">0.3</td>
+	<td style="text-align:right;">10</td>
+	<td style="text-align:right;">&#8211;9.722</td>
+	<td style="text-align:right;">0</td>
+	<td style="text-align:right;">0.0555</td>
+</tr>
+<tr>
+	<td style="text-align:left;">weird inside</td>
+	<td style="text-align:left;">35 Miles</td>
+	<td style="text-align:right;">0.389</td>
+	<td style="text-align:right;">0.467</td>
+	<td style="text-align:right;">10</td>
+	<td style="text-align:right;">&#8211;11.147</td>
+	<td style="text-align:right;">1</td>
+	<td style="text-align:right;">0.0361</td>
+</tr>
+</tbody>
+</table>
+
+<p>And here’s a link to the playlist if you’d like to listen along:</p>
+
+<iframe src="https://open.spotify.com/embed/user/ilikescience/playlist/69E3p7IpqbxIWItVzH7I4l" width="900" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
     <div class="container">
         <h3 class="l--mar-btm-l">1-dimensional graphs</h3>
